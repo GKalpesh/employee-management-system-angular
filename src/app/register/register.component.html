@@ -1,0 +1,103 @@
+<div class="toolbar" role="banner">
+  <img
+    class="logo-main"
+    alt="Angular Logo"
+    src="../assets/images/sankey-solutions.png"
+  />
+  <span>Employee Management System</span>
+    <div class="spacer"></div>
+    <div>
+      <button routerLink = "/login" class="signup">Sign In</button>
+    </div>
+    
+</div>
+
+<div class="content" role="main">
+</div>
+
+<div class="main">
+  <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+
+    <div class="imgcontainer">
+      <img src="../assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder=" Enter Full Name"
+        required class="form-control"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
+        <div *ngIf="signUpForm.submitted && !fullName.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Enter Email"
+        required [pattern]="emailRegex" class="form-control" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+        <div *ngIf="signUpForm.submitted && email.errors">
+          <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+          <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Enter Password"
+        minlength="4" class="form-control" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+        <div *ngIf="signUpForm.submitted && password.errors">
+          <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+          <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone No</label>
+        <input type="tel" #phoneNo="ngModel" [(ngModel)]="userService.selectedUser.phoneNo" name="phoneNo" placeholder="Enter Phone No."
+        required class="form-control" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !phoneNo.valid }">
+        <div *ngIf="signUpForm.submitted && !phoneNo.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Role</label>
+        <input type="text" #role="ngModel" [(ngModel)]="userService.selectedUser.role" name="role" placeholder="Enter Role e.g. HR"
+        required class="form-control"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !role.valid }">
+        <div *ngIf="signUpForm.submitted && !role.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+        <label>Select Role</label>
+        <select name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" class="form-control"
+          required>
+          <option value="">Select Role</option>
+          <option value="">HR</option>
+          <option value="">User</option>
+        </select>
+      </div> -->
+
+      <button type="submit" value="Sign Up">Sign Up</button>
+ 
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+
+  <div class="success" *ngIf = "showSuccessMsg">
+    <p>Registered Successfully</p>
+  </div>
+
+  <div class="alert" *ngIf = "serverErrorMsg">
+    <p>{{serverErrorMsg}}</p>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="toolbar" role="banner">
+    <img
+      class="logo-main"
+      alt="Angular Logo"
+      src="../assets/images/sankey-solutions.png"
+    />
+    <span>Employee Management System</span>
+      <div class="spacer"></div>
+      <div>
+        <button (click)="checkRole()" class="signup">Employee List</button>
+      </div>
+      <div>
+        <button (click)="onLogout()" class="signup">Logout</button>
+      </div>
+      
+</div>
+  
+<div class="content" role="main">
+</div>
+
+<!-- <div class="main">
+  <table *ngIf="userDetails">
+    <thead>
+        <tr>
+            <th colspan="2">User Profile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>First Name</td>
+            <td>{{userDetails.fullName.split(' ')[0]}}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>{{userDetails.fullName.split(' ')[1]}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{userDetails.email}}</td>
+        </tr>
+
+        <tr>
+          <td>Phone No</td>
+          <td>{{userDetails.phoneNo}}</td>
+      </tr>
+
+      <tr>
+        <td>Role</td>
+        <td>{{userDetails.role}}</td>
+    </tr>
+        
+    </tbody>
+  </table>
+
+</div> -->
+
+<div class="container">
+  <div class="userDetails">
+      <p>Profile Details</p>
+  </div>
+  <div class="imgcontainer">
+      <img src="../assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="info">
+      <table *ngIf="userDetails">
+          <tr>
+              <td style="width: 200px; background-color: rgb(210, 85, 235);">First Name:</td>
+              <td style="width: 200px; background-color: rgb(210, 85, 235);">{{userDetails.fullName.split(' ')[0]}}</td>
+          </tr>
+
+          <tr>
+            <td style="width: 37%; background-color: blueviolet;">Last Name:</td>
+            <td style="width: 60%; background-color: blueviolet;">{{userDetails.fullName.split(' ')[1]}}</td>
+        </tr>
+
+          <tr>
+              <td style="width: 37%; background-color: rgb(210, 85, 235);">Email:</td>
+              <td style="width: 60%; background-color: rgb(210, 85, 235);">{{userDetails.email}}</td>
+          </tr>
+          <tr>
+              <td style="width: 37%; background-color: blueviolet;">Phone No:</td>
+              <td style="width: 60%; background-color: blueviolet;">{{userDetails.phoneNo}}</td>
+          </tr>
+          <tr>
+              <td style="width: 37%; background-color: rgb(210, 85, 235);">Role:</td>
+              <td style="width: 60%; background-color: rgb(210, 85, 235);">{{userDetails.role}}</td>
+          </tr>
+      </table>
+  </div>
+</div>

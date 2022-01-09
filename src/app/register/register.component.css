@@ -1,0 +1,151 @@
+form {border: 3px solid #f1f1f1;}
+    
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.spacer {
+  flex: 1;
+}
+
+.logo-main{
+  width: 3%;
+  border-radius: 50%;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.content{
+  margin-bottom: 70px;
+}
+
+.signup{
+    margin-right: 20px;
+    background-color: #1976d2;
+    font-size: larger;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+
+  
+}
+
+@media screen and (max-width: 575px) {
+  
+}
+  
+
+input[type=email], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    .main{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
+    
+    img.avatar {
+      width: 25%;
+      border-radius: 50%;
+    }
+
+    input[type=text]:placeholder {
+      color: #cccccc;
+    }
+    
+    input[type=text].invalid-textbox,input[type=password].invalid-textbox,input[type=tel].invalid-textbox,input[type=email].invalid-textbox{
+    border-bottom: 2px solid #ed5558;
+    }
+    
+    label.validation-message{
+      color:#ed5558;
+    }    
+
+    .alert {
+      padding: 20px;
+      background-color: #f44336; /* Red */
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .success{
+      padding: 20px;
+      background-color:#249424; /* Green */
+      color: white;
+      margin-bottom: 15px;
+    }
+    
+    .container {
+      padding: 16px;
+      margin-top: 16px;
+    }
+    
+    span.psw {
+      padding-top: 16px;
+    }
+    
+    .has-error input[type="email"],
+    .has-error input[type="password"] {
+        border-color: rgb(216, 12, 12);
+        color: rgb(230, 14, 14);
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+    
+    }

@@ -1,0 +1,67 @@
+<div class="toolbar" role="banner">
+    <img
+      class="logo-main"
+      alt="Angular Logo"
+      src="../assets/images/sankey-solutions.png"
+    />
+    <span>Employee Management System</span>
+      <div class="spacer"></div>
+      <div>
+        <button routerLink = "/UserProfile" class="signup">Profile</button>
+      </div>
+      <div>
+        <button (click)="onLogout()" class="signup">Logout</button>
+      </div>
+      
+</div>
+  
+<div class="content" role="main">
+</div>
+
+<div class="elist">
+  <!-- <mat-form-feild>
+      <input (keyup) = "applyFilter($event.target.value)" matInput placeholder="Filter">
+  </mat-form-feild> -->
+
+  <mat-form-field class="matFormField">
+    <input (keyup) = "applyFilter($event.target.value)" matInput placeholder = "Filter">
+  </mat-form-field>
+  
+  
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  
+         
+      <!-- Position Column -->
+      <ng-container class="column" matColumnDef="position">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> No. </th>
+        <td style="width: 10%;" mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container class="column" matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td style="width: 25%;" mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container class="column" matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td style="width: 30%;" mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container class="column" matColumnDef="dateOfJoining">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Joining </th>
+        <td style="width: 20%;" mat-cell *matCellDef="let element"> {{element.dateOfJoining}} </td>
+      </ng-container>
+
+      <ng-container class="column" matColumnDef="yearsOfExp">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Years Of Experience </th>
+        <td style="width: 15%;" mat-cell *matCellDef="let element"> {{element.yearsOfExp}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row (click) = "logData(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>

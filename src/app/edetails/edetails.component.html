@@ -1,0 +1,48 @@
+<div class="toolbar" role="banner">
+    <img
+      class="logo-main"
+      alt="Angular Logo"
+      src="../assets/images/sankey-solutions.png"
+    />
+    <span>Employee Management System</span>
+      <div class="spacer"></div>
+      <div>
+        <button routerLink = "/UserProfile" style="color: #fff; border: none; cursor: pointer; padding: 14px 20px;" class="signup">Profile</button>
+      </div>
+      <div>
+        <button (click)="onLogout()" style="color: #fff; border: none; cursor: pointer; padding: 14px 20px;" class="signup">Sign out</button>
+      </div> 
+  </div>
+  
+  <div class="content" role="main">
+  </div>
+
+<div class="container">
+    <div class="userDetails">
+        <p>Employee Details</p>
+    </div>
+    <div class="imgcontainer">
+        <img src="../assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="info">
+        <table>
+            <tr>
+                <td style="width: 37%; background-color: blueviolet;">Name:</td>
+                <td style="width: 60%; background-color: blueviolet;">{{rowValueName}}</td>
+            </tr>
+            <tr>
+                <td style="width: 37%; background-color: rgb(210, 85, 235);">Email:</td>
+                <td style="width: 60%; background-color: rgb(210, 85, 235);">{{rowValueEmail}}</td>
+            </tr>
+            <tr>
+                <td style="width: 37%; background-color: blueviolet;">Date Of Joining:</td>
+                <td style="width: 60%; background-color: blueviolet;">{{rowValueDateOJoin}}</td>
+            </tr>
+            <tr>
+                <td style="width: 37%; background-color: rgb(210, 85, 235);">Years Of Experience:</td>
+                <td style="width: 60%; background-color: rgb(210, 85, 235);">{{rowValueExp}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
